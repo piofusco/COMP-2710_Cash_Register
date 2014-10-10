@@ -1,0 +1,363 @@
+Michael Pace
+COMP 2710
+
+Test Results
+
+												************************************
+												*Entering payment or printing sales*
+												************************************
+Test Case #1: Operator enters 'p'
+Test Case #2: Operator enters 's'
+Test Case #3: Operator types whole words
+Test Case #4: Operator types invalid letter
+
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ g++ main.cpp Register.cpp Sale.cpp CashSale.cpp CheckSale.cpp CreditCardSale.cpp -o a
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): payment
+Invalid response. Please type only a single character: 's' or 'p'.
+Enter reponse: sales
+Invalid response. Please type only a single character: 's' or 'p'.
+Enter reponse: q
+Invalid response. Please type only a single character: 's' or 'p'.
+Enter reponse: w
+Invalid response. Please type only a single character: 's' or 'p'.
+Enter reponse: e
+Invalid response. Please type only a single character: 's' or 'p'.
+Enter reponse: s
+
+END
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ 
+
+**********************
+*Quitting itemization*
+**********************
+Test Case #5: Operator types anything other than '*' after being prompted to enter an item name
+
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: I Hope That This Test
+Enter amount: $1
+Enter item: Works completely, so I can move on
+Enter amount: $2
+Enter item: *
+Sub-total: $3.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ 
+
+													**************************
+													*Selecting a type of sale*
+													**************************
+Test Case #6: Operator enters 'r'
+Test Case #7: Operator enters 'd'
+Test Case #8: Operator enters 'm'
+Test Case #9: Operator types out whole words
+Test Case #10: Operator enters invalid letter
+
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): regular
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: discount
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: mail-order
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: q
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: w
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: e
+Invalid response. Please type only a single character: 'r' 'd' or 'm'.
+Enter reponse: r
+Tax: $0.07
+
+Total amount: $1.07
+
+Enter type of payment, cash(c), check(k) or credit card (d): ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): d
+Discount: $0.10
+
+Subtotal: $0.90
+
+Tax: $0.06
+
+Total amount: $0.96
+
+Enter type of payment, cash(c), check(k) or credit card (d): ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): m
+Shipping and handling: $3.50
+
+Subtotal: $4.00
+
+Tax: $0.28
+
+Total amount: $4.28
+
+Enter type of payment, cash(c), check(k) or credit card (d): ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ 
+
+
+												***************************
+												*Selecting type of payment*
+												***************************
+Test Case #11: Operator enters 'c'
+Test Case #12: Operator enters 'k'             
+Test Case #13: Operator enters 'd'
+Test Case #14: Operator types whole words
+Test Case #15: Operator types invalid letter
+
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): r
+Tax: $0.07
+
+Total amount: $1.07
+
+Enter type of payment, cash(c), check(k) or credit card (d): cash
+Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: check
+Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: credit card
+Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: q
+Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: w
+Invalid response. Please type only a single character: 'c' 'k' or 'd'.
+Enter reponse: c
+Amount received: $^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): r
+Tax: $0.07
+
+Total amount: $1.07
+
+Enter type of payment, cash(c), check(k) or credit card (d): k
+
+Enter name on the check: ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Apple
+Enter amount: $1
+Enter item: *
+Sub-total: $1.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): r
+Tax: $0.07
+
+Total amount: $1.07
+
+Enter type of payment, cash(c), check(k) or credit card (d): d
+Enter name on the credit card: ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ 
+
+										   *************************************
+										   *Matching the output on instructions*
+										   *************************************
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ ./a
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Calculator
+Enter amount: $35.70
+Enter item: Batteries
+Enter amount: $5.20
+Enter item: *
+Sub-total: $40.90
+Enter type of Sale: regular(r), discount(d) or mail-order(m): r
+Tax: $2.86
+
+Total amount: $43.76
+
+Enter type of payment, cash(c), check(k) or credit card (d): c
+Amount received: $50.00
+
+Change: $6.24
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): s
+
+Sales #1:
+
+1. Calculator	$ 35.70
+2. Batteries	$ 5.20
+   Sub-Total:	$ 40.90
+   Tax:	$ 2.86
+   Total amount:	$ 43.76
+CASH
+Amount received:	$ 50.00
+Change:	$ 6.24
+END
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Printer
+Enter amount: $148.30
+Enter item: Ink Cartridge
+Enter amount: $43.70
+Enter item: *
+Sub-total: $192.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): m
+Shipping and handling: $7.00
+
+Subtotal: $199.00
+
+Tax: $13.93
+
+Total amount: $212.93
+
+Enter type of payment, cash(c), check(k) or credit card (d): d
+Enter name on the credit card: John Doe
+Enter credit card number: 123456782468
+Enter expiration date: 07/12
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): p
+Enter item: Scanner
+Enter amount: $105.70
+Enter item: Printer Paper
+Enter amount: $21.40
+Enter item: *
+Sub-total: $127.10
+Enter type of Sale: regular(r), discount(d) or mail-order(m): d
+Discount: $12.71
+
+Subtotal: $114.39
+
+Tax: $8.01
+
+Total amount: $122.40
+
+Enter type of payment, cash(c), check(k) or credit card (d): k
+
+Enter name on the check: Jane Smith
+
+Enter driver's license number: 24680135
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): s
+
+Sales #1:
+
+1. Calculator	$ 35.70
+2. Batteries	$ 5.20
+   Sub-Total:	$ 40.90
+   Tax:	$ 2.86
+   Total amount:	$ 43.76
+CASH
+Amount received:	$ 50.00
+Change:	$ 6.24
+Sales #2:
+
+1. Printer	$ 148.30
+2. Ink Cartridge	$ 43.70
+   Sub-Total:	$ 192.00
+   Shipping and handling:	$ 7.00
+   Sub-Total:	$ 199.00
+   Tax:	$ 13.93
+   Total amount:	$ 212.93
+CREDIT CARD	John Doe 123456782468 07/12
+
+Sales #3:
+
+1. Scanner	$ 105.70
+2. Printer Paper	$ 21.40
+   Sub-Total:	$ 127.10
+   Discount:	$ 12.71
+   Sub-Total:	$ 114.39
+   Tax:	$ 8.01
+   Total amount:	$ 122.40
+CHECK	Jane Smith 24680135
+END
+
+
+	***********************************************************************************
+	|				Welcome to Great Buy!		  	          |
+	***********************************************************************************
+Enter payment(p) or print sales(s): ^C
+Michael-Paces-MacBook-Pro:Lab 4 michaelpace$ 

@@ -1,0 +1,248 @@
+Michael Pace
+COMP 2710
+
+Lab 4: Cash Register
+															***************************
+																ANALYSIS - Use cases
+															***************************
+
+*******************************************
+Use Case #1 (Entering options at startup)
+*******************************************
+1. Brief Description: This use case allows operator to enter payments
+
+2. Actors
+- Operator
+- Register
+
+3. Precondition
+- Register weclomes operator to Great Buy
+- Register prompts Operator to enter payment 'p' or print sales 's'
+
+4. Basic Flow of Events
+- Operator enters 'p'
+- Regster prompts Operator to enter the name of the item
+- Operator enters the name of the item
+- Register prompts Operator to enter the price of the item
+- Operator enters the price of the item
+
+5. Alternate Flows
+
+5.1 Operator types invalid choice
+- Register continually prompts Operator to enter 's' or 'p' until they correctly do so
+
+5.2 Operator enters '*' after entering the price of an item
+- Register does not prompt operator to enter another item
+
+6. Post-conditions
+- Register continually prompts Operator to enter the name and price of an item until they enter '*'
+- Register prints out subtotal of item(s) entered
+
+*************************************
+Use Case #2 (Entering type of sale)
+*************************************
+1. Brief Description: This use case allows operator to enter the type of sale: 'r' for regular, 'd' for discount, 'm' for mail-order
+
+2. Actors
+- Operator
+- Register
+
+3. Preconditions
+- Operator has entered item(s) price(s) and name(s)
+- Operator has typed '*' after entering the price of an item
+- Register prints Subtotal of all items
+
+4. Basic Flow of Events
+- Operator types'r'
+- Register calculates and prints out the tax of all items entered
+- Register calculates and prints ouf the total amount of all items
+
+5. Alternate Flows
+
+5.1 Operator types 'd'
+- Register calculates and prints out the Discount of all items
+- Register calculates and prints out new subtotal
+- Register calculates and prints out tax of purchase
+- Register calculates nad prints total amount of purchase
+
+5.2 Operator types 'm'
+- Register calculates and prints shipping and handling for all items and printed out
+- Register calculates nad prints new subtotal
+- Register calculates and prints tax
+- Register calculates and prints total amount
+
+6. Post-conditions
+- Register prompts operator to enter their desired type of payment
+
+****************************************
+Use Case #3 (Entering type of payment)
+****************************************
+1. Brief Description: This use case allows users to enter their desired form of payment for their purchase
+
+2. Actors
+- Operator
+- Register
+
+3. Preconditions
+- Operator has entered all their desired items they wish to purchase
+- Operator has typed '*'
+- Operator has entered the type of sale they are making
+
+4. Basic Flow of Events
+- Register prompts operator to enter their desired type of payment
+- Operator types 'c'
+- Register prompts operator to enter the amount of cash received
+- Register calculates appropriate change
+
+5. Alternate Flows
+
+5.1 Operator types 'k'
+- Register prompts operator to enter the name on the check
+- Operator enters a name
+- Register prompts operator to enter the customers driver's license number
+- Operator enters the customers driver's license number
+
+5.2 Operator types 'd'
+- Register prompts operator to enter the name on the credit card
+- Operator enters the name on the credit card
+- Register prompts operator to enter the credit card number
+- Operator enters the credit card number
+- Register prompts operator to enter the expiration date
+- Operator enters the expiration date
+
+6. Post-conditions
+- Register welcomes user to Great Buy
+- Register continually prompts the operator to type either 'p' or 's'
+
+******************************
+Use Case #4 (Printing Sales)
+******************************
+1. Brief Description: This use case allows the Operator to print sales of all items entered
+
+2. Actors
+- Operator
+- Register
+
+3. Preconditions
+- Register welcomes Operator to Great Buy
+- Register has prompted operator type either 's' or 'p'
+- Operator has entered 'p'
+- Operator has entered the name, price, type of sale, type of payment and payment information for all items
+- Register has prompted operator to enter 's' or 'p' again
+- Operator has entered 's'
+
+4. Basic Flow of Events
+- Register prompts user to type either 'p' or 's'
+- Operator types 's'
+- Register will print out each sale. This will list the sale number which will contain the items purchased numbered in the order in which they were entered, their prices, the subtotal, the tax, the total amount, the type of payment in bold letters, followed by the payment information. If the payment type was cash, register will print the amount received followed by the changed given. If the payment type was a credit card, register will print out the name on the card, followed by the card number, followed by the expiration date. If the payment type was a check, register will print out the name on the check, followed by the driver's license number. Register will finally print out a single line with the word "End".
+
+5. Alternate Flows
+
+5.1 Operator types an invalid choice
+- Register continually prompts operator to type 'p' or 's' until they do so
+
+6. Post-conditions
+- Register weclomes operator to Great Buy
+- Register prompts user to enter either 'p' or 's'
+
+*****************************************
+Use Case #5: Entering prices or amounts
+*****************************************
+1. Brief Description: This use case allows the operator to enter correct values for prices or amount of cash received
+
+2. Actors
+- Operator
+- Register
+
+3. Preconditions
+- Register has prompted operator to enter an amount of money
+
+4. Basic Flow of Events
+- Register has prompted operator to enter an amount of money
+- Operator enters an amount of money
+
+5. Alternative Flows
+
+5.1 Operator enters an invalid value
+- Register will continually prompt operator to enter a number of the form #.##
+
+6. Post-conditions
+- Register either returns the amount change the operator must give the customer or continues itemization
+
+																	*************
+																		DESIGN
+																	*************
+
+For this lab, I am using 4 classes: Register and Sale (CashSale, CheckSale and CreditCardSale are all children of Sale). Menu is the implemenation of the actual cash register. Class Sale and its children represent different variations of purchases to be made on a register.
+
+Register - This class serves as a driver for the cash register. It will create a Menu object and then using its main() function will prompt the operator for all required information. It will process this information, making Sale objects and storing them properly into saleslist.
+
+Sale - This class is the implementation of an sale of an item in a store. It has member variables for the name of the object and the price, a dynamic container for all items sold in a purchase as well as variables for tax, amount and type of sale. It has mutator and accessor functions for all of these member variables. Sale has 3 children to represent the many different forms of purchases: cash, credit card and check. Class Sale has two virtual functions process_payment and print_sale to be defined in each of its children
+
+CashSale - This class inherits from Sale and represents a cash purchase. It has member variables for the amount of cash received and the amount of change returned to the customer. CashSale has accessor and mutator functions for all of these variables. Function process_payment is written to take in the amount of cash received and calculate the amount change to be returned to the customer. Function print_payment will be written to print out this transaction and the information described in the previous sentence.
+
+CheckSale - This class inherits from Sale and represents a check purhse. It has member variables for the name on the check given to the operator as well as the driver's license number. Function process_payment is written to take in these two member variables. Function print_payment will be written to print out this transaction and the information described in the previous sentence.
+
+CredidCardSale - This class inherits from Sale and represents a credit card purchase. It has member variables for the name on the credit card, the credit card number as well as the expiration date. Function process_payment is written to take in these member variables. Function print_payment will be written to print out this transaction and the information described in the previous sentence.
+
+																	**************
+																		TESTING
+																	**************
+Entering payment or printing sales
+Test Case #1: Operator enters 'p'
+	- Expected output: Register continually prompts operator to enter item names and prices
+Test Case #2: Operator enters 's'
+	- Expected output: Register prompts operator to
+Test Case #3: Operator types whole words
+	- User input: payment
+	- Expected output: Please enter either 'p' or 's'
+Test Case #4: Operator types invalid letter
+	- User input: f
+	- Expected output: Please enter either 'p' or 's'
+
+Quitting itemization
+Test Case #5: Operator types anything other than '*' after being prompted to enter an item name
+	- User input: done
+	- Expected output: Register will ask operator to type the amount of this item
+
+Selecting a type of sale
+Test Case #6: Operator enters 'r'
+	- Register will print out calculated tax and total amount of all items
+	- Register will prompt operator for type of payment
+Test Case #7: Operator enters 'd'
+	- Register will calculate and print out discount, subtotal, tax and total amount of all items
+	- Register will prompt operator for type of payment
+Test Case #8: Operator enters 'm'
+	- Register will calculate and print out the shipping and handling, subtotal, tax and total amount of all items
+	- Register will prompt operator for type of payment
+Test Case #9: Operator types out whole words
+	- User input: regular
+	- Expected output: Register will continually prompt user to type either 'r', 'd' or 'm'
+Test Case #10: Operatr enters invalid letter
+	- User input: a
+	- Expected output: Register will continually prompt user to type either 'r', 'd' or 'm'
+
+Selecting type of payment
+Test Case #11: Operator enters 'c'
+	- Register prompts operator to enter the amount of cash received
+Test Case #12: Operator enters 'k'             
+	- Register prompts operator to enter the name on the credit card
+Test Case #13: Operator enters 'd'
+	- Register prompts operator to enter the name on the check
+Test Case #14: Operator types whole words
+	- User input: check
+	- Expected output: Register will continually prompt user to type either 'c', 'k' or 'd'
+Test Case #15: Operator types invalid letter
+	- User input: e	
+	- Expected output: Register will continually prompt user to type either 'c', 'k' or 'd'
+
+Entering amounts (either cash return or prices of items)
+Test Case #16: Operator enters a number value without a decimal
+	- User input: 100
+	- Expected output: Register accepts value as 100.00
+Test Case #17: Operator enters a number with more than 1 decimal
+	- User input: 100.0.00
+	- Expected output: Register will continually prompt user to enter a valid amount of the from #.##
+Test Case #18: Operator types a number in words
+	- User input: one hundred
+	- Expected output: Register will continually prompt user to enter a valid amount of the from #.##
