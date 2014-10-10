@@ -2,10 +2,15 @@ COMP-2710_Cash_Register
 =======================
 
 Goals:
+
 • To develop a simple cash register application taking advantage of inheritance
+
 • To use virtual functions to simplify implementation
+
 • To understand the use of vectors that contain different type of objects
+
 • To perform Object-Oriented Analysis, Design, and Testing
+
 • To learn the use of vector class template
 
 In this Lab assignment, you will implement a simple cash register application that allows the cashier to perform the following functions:
