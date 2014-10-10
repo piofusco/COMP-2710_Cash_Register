@@ -1,0 +1,86 @@
+A sample execution is shown below, where the bold fonts indicate input by the user.
+
+> lim_4
+
+
+=========================================================== 
+| Welcome to Great Buy! | 
+===========================================================
+Enter payment(p) or print sales(s): p Enter item: Calculator
+Enter amount: $ 35.70
+Enter item: Battery
+Enter amount: $ 5.20
+Enter item: *
+Sub-Total: $ 40.90
+Enter type of Sale: regular(r), discount(d) or mail-order(m): r Tax: $ 2.86
+Total amount: $ 43.76
+Enter type of payment, cash(c), check(k) or credit card (d): c Amount received: $ 50.00
+Change: $ 6.24
+
+
+=========================================================== 
+| Welcome to Great Buy! | 
+===========================================================
+Enter payment(p) or print sales(s): p 8
+Enter item: Printer
+Enter amount: $ 148.30
+Enter item: Ink Catridge
+Enter amount: $ 43.70
+Enter item: *
+Sub-Total:  $ 192.00
+Enter type of Sale: regular(r), discount(d) or mail-order(m): m Shipping and handling: $ 7.00
+Sub-Total: $ 199.00
+Tax: $ 13.93
+Total amount: $ 212.93
+Enter type of payment, cash(c), check(k) or credit card (d): d Enter name on the credit card: John Doe
+Enter credit card number: 123456782468 Enter expiration date: 07/12
+
+
+=========================================================== 
+| Welcome to Great Buy! | 
+===========================================================
+Enter payment(p) or print sales(s): p Enter item: Scanner
+Enter amount: $ 105.70
+Enter item: Printer paper
+Enter amount: $ 21.40
+Enter item: *
+Sub-Total: $ 127.10
+Enter type of Sale: regular(r), discount(d) or mail-order(m): d Discount: $12.70
+Sub-Total:  $ 114.40
+Tax:  $ 8.01
+Total amount: $ 122.41
+Enter type of payment, cash(c), check(k) or credit card (d): k Enter name on the check: Jane Smith
+Enter driver’s license number: 24680135
+
+
+=========================================================== 
+| Welcome to Great Buy! | 
+===========================================================
+Enter payment(p) or print sales(s): s
+Sales #1:
+   1. Calculator  $ 35.70
+   2. Battery  $ 5.20
+      Sub-Total:  $ 40.90
+      Tax:  $ 2.86
+      Total amount:  $ 43.76
+      CASH
+      Amount received:  $ 50.00
+      Change:  $ 6.24
+Sales #2:
+   1. Printer  $ 148.30
+   2. Ink Catridge  $ 43.70
+Sub-Total: $ 192.00
+Shipping and handling: $ 7.00 Sub-Total: $ 199.00
+Tax: $ 13.93
+Total amount: $ 212.93
+CREDIT CARD John Doe 123456782468 07/12
+Sales #3:
+   1. Scanner     $ 105.70
+   2. Printer paper   $ 21.40
+End
+Sub-Total:  $ 127.10
+Discount: $12.70
+Sub-Total:  $ 114.40
+Tax:  $ 8.01
+Total amount:  $ 122.41
+CHECK   Jane Smith 24680135
